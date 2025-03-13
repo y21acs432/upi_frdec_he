@@ -4,7 +4,7 @@ import os
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 
 # Paths for datasets and saved models
-DATASET_PATH = os.path.join(BASE_DIR, "data", "modified_synthetic_upi_dataset.csv")
+DATASET_PATH = os.path.join(BASE_DIR, "data", "synta_upi_dataset.csv")
 MODEL_PATH = os.path.join(BASE_DIR, "saved_models", "xgboost_model.pkl")
 SCALER_PATH = os.path.join(BASE_DIR, "saved_models", "scaler.pkl")
 ENCRYPTED_MODEL_PATH = os.path.join(BASE_DIR, "saved_models", "encrypted_model.pkl")
