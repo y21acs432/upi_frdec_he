@@ -29,11 +29,13 @@ class PrivateXGBoostModel:
             logger.info("Initializing XGBoost classifier...")
             self.model = xgb.XGBClassifier(
                 n_estimators=500,  # More trees for better learning
-                max_depth=6,  # Prevent overfitting
+                max_depth=3,  # Prevent overfitting
                 learning_rate=0.05,  # Lower learning rate for better convergence
                 subsample=0.8,  # Use 80% of data per tree
                 colsample_bytree=0.8,  # Prevent overfitting
-                scale_pos_weight=5 # Adjust weight for fraud cases (95%/5%)
+                scale_pos_weight=5, # Adjust weight for fraud cases (95%/5%)
+                reg_alpha=0.1,
+                reg_lambda=1.0
             )
 
             logger.info("Training the model...")
